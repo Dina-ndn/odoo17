@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="waaneiza_file_upload.list">
+      <field name="name">waaneiza_file_upload list</field>
+      <field name="model">waaneiza_file_upload.waaneiza_file_upload</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="waaneiza_file_upload.action_window">
+      <field name="name">waaneiza_file_upload window</field>
+      <field name="res_model">waaneiza_file_upload.waaneiza_file_upload</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="waaneiza_file_upload.action_server">
+      <field name="name">waaneiza_file_upload server</field>
+      <field name="model_id" ref="model_waaneiza_file_upload_waaneiza_file_upload"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="waaneiza_file_upload" id="waaneiza_file_upload.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="waaneiza_file_upload.menu_1" parent="waaneiza_file_upload.menu_root"/>
+    <menuitem name="Menu 2" id="waaneiza_file_upload.menu_2" parent="waaneiza_file_upload.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="waaneiza_file_upload.menu_1_list" parent="waaneiza_file_upload.menu_1"
+              action="waaneiza_file_upload.action_window"/>
+    <menuitem name="Server to list" id="waaneiza_file_upload" parent="waaneiza_file_upload.menu_2"
+              action="waaneiza_file_upload.action_server"/>
+-->
+  </data>
+</odoo>

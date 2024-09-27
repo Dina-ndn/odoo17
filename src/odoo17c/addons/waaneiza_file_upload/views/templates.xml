@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+<!--
+        <sheet>
+                    <group>
+                        <group>
+                            <field name="file_name" position="attributes">
+                                <attribute name="string">File Name</attribute>
+                            </field>
+                        </group><br/>
+                        <group>
+                            <field name="employee_name"/>
+                        </group><br/>
+                        <group>
+                            <field name="form_link"/>
+                        </group><br/>
+                        <group>
+                            <field name="upload_survey"/>
+                        </group><br/>
+                        <group>
+                            <field name="upload_report"/>
+                        </group>
+                    </group>
+                </sheet>
+-->
+    </data>
+</odoo>

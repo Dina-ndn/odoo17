@@ -1,0 +1,83 @@
+<odoo>
+
+    <!-- Tree view -->
+    <record id="file_upload_tree" model="ir.ui.view">
+        <field name="name">File Upload Tree</field>
+        <field name="model">file.upload</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="List of File Upload">
+                <field name="file_name"/>
+                <field name="employee_name"/>
+                <field name="form_link" widget="url"/>
+                <field name="survey_name"/>
+                <field name="report_name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Form view -->
+    <record id="file_upload_form" model="ir.ui.view">
+        <field name="name">File Upload form</field>
+        <field name="model">file.upload</field>
+        <field name="arch" type="xml">
+            <form string="File Upload">
+                 <header>
+                    <button name="action_customer" type="object" class="oe_highlight" string="Customer"  context="{'default_upload_id': active_id}"/>
+                    <button name="action_supplier" type="object" class="oe_highlight" string="Supplier"  context="{'default_upload_id': active_id}"/>
+                    <button name="action_vendor" type="object" class="oe_highlight" string="Vendor" context="{'default_upload_id': active_id}"/>
+                </header>
+                     <sheet>
+                    <group>
+                        <group>
+                            <field name="file_name" position="attributes">
+                                <attribute name="string">File Name</attribute>
+                            </field>
+                        </group><br/>
+                        <group>
+                            <field name="employee_name"/>
+                        </group><br/>
+                        <group>
+                            <field name="form_link" widget="url"/>
+                        </group><br/>
+                        <group>
+                            <field name="upload_survey" filename="survey_name"/>
+                            <field name="survey_name" invisible="1"/>
+                        </group><br/>
+                        <group>
+                            <field name="upload_report" filename="report_name"/>
+                            <field name="report_name" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                 <!-- Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_follower"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                <!-- End Chatter -->
+            </form>
+         </field>
+     </record>
+
+    <!-- Action -->
+    <record id="action_file_upload" model="ir.actions.act_window">
+        <field name="name">File Upload</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">file.upload</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create first File upload!!
+            </p>
+        </field>
+    </record>
+
+            
+    <!-- Menu -->
+    <menuitem id="waaneiza_root" name="Wanneiza Upload" sequence="2">
+    </menuitem>
+    <menuitem id="file_upload" name="File Upload" parent="waaneiza_root" action="action_file_upload"/>
+</odoo>
